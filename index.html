@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Media Server Status</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .info {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .server-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .signal {
+            width: 12px;
+            height: 12px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            position: relative;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .qr-code{
+            margin-top: 20px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+        <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+</head>
+<body>
+    <svg class="server-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="6" rx="1" stroke="#4CAF50" stroke-width="2" />
+        <rect x="3" y="14" width="18" height="6" rx="1" stroke="#4CAF50" stroke-width="2" />
+        <circle cx="17" cy="7" r="1" fill="#4CAF50" />
+        <circle cx="17" cy="17" r="1" fill="#4CAF50" />
+    </svg>
+    <div class="message">Media server is running...</div>
+    <div class="signal"></div>
+    
+    
+    <img class="qr-code" id="qr-image" src="qrcode.png" alt="QR Code will appear here">
+    
+    <p class="info" id="address"></p>
+</body>
+</html>
