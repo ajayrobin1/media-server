@@ -14,7 +14,7 @@ const localIP = getLocalIP();
 app.use(express.static('public'))
 app.use(express.urlencoded());
 
-=    const corsOptions = {
+     const corsOptions = {
         origin: 'http://localhost:3000', // Replace with the actual origin of your frontend application
         credentials: true, // Allow sending cookies and authentication headers
     };
