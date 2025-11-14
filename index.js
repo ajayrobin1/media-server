@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const QRCode = require('qrcode')
 
 const {search} = require('./routes/search.js')
 const { streamVideo } = require('./functions/torrents');
@@ -39,14 +38,5 @@ const url = `http://${localIP}:${port}`;
 app.listen(port, () => {
   console.log(`HTTPS Server running at ${url}`);
 });
-
-// With promises
-QRCode.toFile( path.join(__dirname, 'public', 'qrcode.png'), url)
-  .then(url => {
-    console.log(url)
-  })
-  .catch(err => {
-    console.error(err)
-  })
 
 exports.port = port;

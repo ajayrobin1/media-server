@@ -5,9 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "nodemon index.js",
-    "app:dir": "electron-builder --dir",
-    "app:dist": "electron-builder"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +14,6 @@
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "puppeteer": "^24.4.0",
-    "qrcode": "^1.5.4",
     "webtorrent": "^2.5.19"
   }
 }
