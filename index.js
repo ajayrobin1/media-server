@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const {search} = require('./routes/search.js')
 const { streamVideo } = require('./functions/torrents');
@@ -13,14 +14,12 @@ const localIP = getLocalIP();
 app.use(express.static('public'))
 app.use(express.urlencoded());
 
-app.use((req, res, next) => {
-  res.header(`Access-Control-Allow-Origin`, `*`);
-  res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
-  res.header(`Access-Control-Allow-Headers`, `Content-Type`);
-  res.setHeader("Access-Control-Allow-Headers", "Range");
-  res.setHeader("Access-Control-Expose-Headers", "Content-Range, Accept-Ranges");
-  next();
-});
+=    const corsOptions = {
+        origin: 'http://localhost:3000', // Replace with the actual origin of your frontend application
+        credentials: true, // Allow sending cookies and authentication headers
+    };
+
+    app.use(cors (corsOptions));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 
