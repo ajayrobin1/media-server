@@ -15,7 +15,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded());
 
      const corsOptions = {
-        origin: 'http://localhost:3000', // Replace with the actual origin of your frontend application
+        origin: ['http://localhost:3000'], // Replace with the actual origin of your frontend application
         credentials: true, // Allow sending cookies and authentication headers
     };
 
